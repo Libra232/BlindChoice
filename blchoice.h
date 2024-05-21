@@ -9,7 +9,7 @@ using strvec = std::vector<std::vector<std::string>>;
 
 enum class CSV_FIELDS
 {
-    Name, Author, Description, Link, IsBook, Year
+    Name, Author, Description, Genre, Link, Year
 };
 
 struct Book
