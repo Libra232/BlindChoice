@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/Programming/BL/BlindChoice/build",
-  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++1z -o CMakeFiles\\proj.dir\\main.cpp.obj -c C:\\Programming\\BL\\BlindChoice\\main.cpp",
-  "file": "C:/Programming/BL/BlindChoice/main.cpp",
-  "output": "CMakeFiles/proj.dir/main.cpp.obj"
-}
-]
