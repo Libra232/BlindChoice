@@ -32,6 +32,7 @@ void Storage::writeCsv(const std::string &path, std::vector<std::string> &text)
     {
         ftext.append(text[i]).append(",");
     }
+    file << ftext;
     file.close();
 }
 
