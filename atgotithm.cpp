@@ -4,10 +4,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+
+
 // random
-
-
-// genre sorting
 struct TableRow {
     std::string name;
     std::string author;
@@ -17,7 +16,17 @@ struct TableRow {
     int year;
 };
 
+TableRow getRandomRow(const std::vector<TableRow>& table) {
+    if (table.empty()) {
+        throw std::runtime_error("Table is empty");
+    }
+    std::srand(std::time(nullptr));
+    int randomIndex = std::rand() % table.size();
+    return table[randomIndex];
+}
 
+
+// genre sorting
 TableRow getRandomRowByGenre(const std::vector<TableRow>& table, const std::string& genre) {
     std::vector<TableRow> filteredRows;
     for (const auto& row : table) {
@@ -36,7 +45,6 @@ TableRow getRandomRowByGenre(const std::vector<TableRow>& table, const std::stri
 
     return filteredRows[randomIndex];
 }
-
 
 
 // year sorting
