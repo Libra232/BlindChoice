@@ -1,0 +1,5 @@
+C:/Programming/BL/BlindChoice/build/CMakeFiles/proj.dir
+C:/Programming/BL/BlindChoice/build/CMakeFiles/package.dir
+C:/Programming/BL/BlindChoice/build/CMakeFiles/package_source.dir
+C:/Programming/BL/BlindChoice/build/CMakeFiles/edit_cache.dir
+C:/Programming/BL/BlindChoice/build/CMakeFiles/rebuild_cache.dir

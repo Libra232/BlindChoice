@@ -9,7 +9,7 @@ using strvec = std::vector<std::vector<std::string>>;
 
 enum class CSV_FIELDS
 {
-    Name, Author, Description, Link, IsBook, Year
+    Name, Author, Description, Link, Year
 };
 
 struct Book
@@ -32,6 +32,7 @@ struct Movie
 class Storage
 {
     public:
+    static void writeCsv(const std::string &path, std::vector<std::string> &text);
     static void readCsv(const std::string &path, strvec &table);
     Storage(const strvec &table);
     friend std::ostream& operator <<(std::ostream& ostream, const Storage& t);

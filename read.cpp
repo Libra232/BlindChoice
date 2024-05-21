@@ -22,4 +22,16 @@ void Storage::readCsv(const std::string &path, strvec &table)
         }
         table.push_back(row);
     }
+};
+
+void Storage::writeCsv(const std::string &path, std::vector<std::string> &text)
+{
+    std::ofstream file(path);
+    std::string ftext = "";
+    for (int i = 0; i < text.size(); i++)
+    {
+        ftext.append(text[i]).append(",");
+    }
+    file.close();
 }
+
