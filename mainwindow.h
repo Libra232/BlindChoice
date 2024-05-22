@@ -19,6 +19,9 @@ private slots:
     void on_pushButton_clicked();
 
 private:
+    void buildGenreComboBox();
+
+private:
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

@@ -20,6 +20,7 @@ struct Book
     QString Description;
     QString Link;
     QString Genre;
+    int year;
 };
 
 struct Movie

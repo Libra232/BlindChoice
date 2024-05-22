@@ -67,7 +67,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="yearSpinBox"/>
+         <widget class="QSpinBox" name="yearSpinBox">
+          <property name="maximum">
+           <number>9999</number>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_6">
@@ -79,18 +83,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QRadioButton" name="horrorRadioButton">
-            <property name="text">
-             <string>Horror</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="AdvRadioButton">
-            <property name="text">
-             <string>Adventure</string>
-            </property>
-           </widget>
+           <widget class="QComboBox" name="genreComboBox"/>
           </item>
          </layout>
         </item>
@@ -113,7 +106,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

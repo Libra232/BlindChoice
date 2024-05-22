@@ -26,6 +26,7 @@ void Storage::readCsv()
             if (i == static_cast<int>(CSV_FIELDS::Genre)) book.Genre = row[i];
             if (i == static_cast<int>(CSV_FIELDS::Link)) book.Link = row[i];
             if (i == static_cast<int>(CSV_FIELDS::Name)) book.Name = row[i];
+            if (i == static_cast<int>(CSV_FIELDS::Year)) book.year = row[i].toInt();
         }
         _libriary.append(book);
     }
@@ -35,8 +36,8 @@ void Storage::readCsv()
 void Storage::writeCsv(Book &book)
 {
     QFile file(_path);
-    file.open(QFile::WriteOnly);
+    file.open(QFile::Append);
     QTextStream ts(&file);
-    ts <<  book.Name << "," << book.Author << "," << book.Description << ","<< book.Genre << "," << book.Link << "\n";
+    ts <<  book.Name << "," << book.Author << "," << book.Description << ","<< book.Genre << "," << book.Link << "," << book.year << "\n";
     file.close();
 }
