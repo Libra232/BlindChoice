@@ -17,7 +17,7 @@ AddBook::~AddBook()
 
 void AddBook::buildGenreComboBox()
 {
-    for (const QString& item: {"comedy", "horror", "documentary", "science fiction", "musical", "cartoon", "western", "thriller", "action film", "historical film", "romantic comedy", "adventure", "biographical", "family-oriented film", "detective film"}){
+    for (const QString& item: {"comedy", "horror", "documentary", "science fiction", "musical", "cartoon", "western", "thriller", "historical", "romantic comedy", "adventure", "biographical", "detective"}){
         ui->genreComboBox->addItem(item);
     }
 }

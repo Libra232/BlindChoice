@@ -3,8 +3,6 @@
 #include "addbook.h"
 #include "lookbooks.h"
 #include "randbook.h"
-#include "genrechoice.h"
-#include "newrandb.h"
 
 BookChoice::BookChoice(QWidget *parent) :
     QDialog(parent),
@@ -41,11 +39,4 @@ void BookChoice::on_pushButtonRand_clicked()
     nbook.exec();
 }
 
-
-void BookChoice::on_pushButtonGenre_clicked()
-{
-    GenreChoice nbook;
-    nbook.setModal(true);
-    nbook.exec();
-}
 

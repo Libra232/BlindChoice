@@ -43,6 +43,15 @@ void Storage::writeCsv(Book &book)
     file.close();
 }
 
+void Storage::writeCsvM(Movie &movie)
+{
+    QFile file(_path);
+    file.open(QFile::Append);
+    QTextStream ts(&file);
+    ts <<  movie.Director << "," << movie.Name << "," << movie.Link << ","<< movie.Description << "," << movie.Genre << "," << movie.year << "\n";
+    file.close();
+}
+
 Book Storage::getRandomRow() {
     int randomIndex = rand();
     return _libriary[randomIndex];

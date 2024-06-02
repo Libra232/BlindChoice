@@ -22,7 +22,6 @@ private slots:
 
     void on_pushButtonRand_clicked();
 
-    void on_pushButtonGenre_clicked();
 
 private:
     Ui::BookChoice *ui;

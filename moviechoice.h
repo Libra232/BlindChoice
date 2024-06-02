@@ -15,6 +15,13 @@ public:
     explicit MovieChoice(QWidget *parent = nullptr);
     ~MovieChoice();
 
+private slots:
+    void on_pushButtonAdd_clicked();
+
+    void on_pushButtonAll_clicked();
+
+    void on_pushButtonRand_clicked();
+
 private:
     Ui::MovieChoice *ui;
 };

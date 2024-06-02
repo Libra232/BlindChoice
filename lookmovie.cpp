@@ -1,20 +1,20 @@
-#include "lookbooks.h"
-#include "ui_lookbooks.h"
+#include "lookmovie.h"
+#include "ui_lookmovie.h"
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
 
 
-LookBooks::LookBooks(QWidget *parent) :
+LookMovie::LookMovie(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::LookBooks)
+    ui(new Ui::LookMovie)
 {
     ui->setupUi(this);
     csvModel = new QStandardItemModel(this);
     csvModel->setColumnCount(6);
-    csvModel->setHorizontalHeaderLabels(QStringList() << "Author" << "Name" << "Link" << "Description" << "Genre" << "Year");
+    csvModel->setHorizontalHeaderLabels(QStringList() << "Director" << "Name" << "Link" << "Description" << "Genre" << "Year");
     ui->tableView->setModel(csvModel);
-    QFile file("Books.csv");
+    QFile file("Movies.csv");
     if ( !file.open(QFile::ReadWrite | QFile::Text) ) {
         qDebug() << "File not exists";
     } else {
@@ -28,19 +28,19 @@ LookBooks::LookBooks(QWidget *parent) :
             }
             csvModel->insertRow(csvModel->rowCount(), standardItemsList);
         }
-        connect(ui->pushButtonDelete, &QPushButton::clicked, this, &LookBooks::deleteSelectedRows);
-        connect(ui->pushButtonSave, &QPushButton::clicked, this, &LookBooks::saveChanges);
+        connect(ui->pushButtonDelete, &QPushButton::clicked, this, &LookMovie::deleteSelectedRows);
+        connect(ui->pushButtonSave, &QPushButton::clicked, this, &LookMovie::saveChanges);
         file.close();
     }
 }
 
-LookBooks::~LookBooks()
+LookMovie::~LookMovie()
 {
     delete ui;
     delete csvModel;
 }
 
-void LookBooks::deleteSelectedRows()
+void LookMovie::deleteSelectedRows()
 {
     QModelIndexList selectedRows = ui->tableView->selectionModel()->selectedRows();
     std::sort(selectedRows.begin(), selectedRows.end(), [](const QModelIndex &a, const QModelIndex &b) {
@@ -52,9 +52,9 @@ void LookBooks::deleteSelectedRows()
     }
 }
 
-void LookBooks::saveChanges()
+void LookMovie::saveChanges()
 {
-    QFile file("Books.csv");
+    QFile file("Movies.csv");
     if (!file.open(QFile::WriteOnly | QFile::Text)) {
         qDebug() << "Unable to open file for writing";
         return;

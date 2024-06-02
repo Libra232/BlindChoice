@@ -24,11 +24,17 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         bookchoice.h bookchoice.cpp bookchoice.ui
-
-
+        moviechoice.h moviechoice.cpp moviechoice.ui
+        addbook.h addbook.cpp addbook.ui
         storage.h storage.cpp
-
+        lookbooks.h lookbooks.cpp lookbooks.ui
         randbook.h randbook.cpp randbook.ui
+
+
+        lookmovie.h lookmovie.cpp lookmovie.ui
+        randmovi.h randmovi.cpp randmovi.ui
+        addmovies.h addmovies.cpp addmovies.ui
+
 
 
 

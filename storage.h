@@ -38,6 +38,7 @@ class Storage
 {
     public:
     void writeCsv(Book &book);
+    void writeCsvM(Movie &movie);
     void readCsv();
     Book getRandomRow();
     Storage(const QString &path);

@@ -12,6 +12,10 @@ class LookBooks : public QDialog
 {
     Q_OBJECT
 
+private slots:
+    void deleteSelectedRows();
+    void saveChanges();
+
 public:
     explicit LookBooks(QWidget *parent = nullptr);
     ~LookBooks();
