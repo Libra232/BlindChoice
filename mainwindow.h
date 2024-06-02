@@ -16,10 +16,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_pushButtonMovie_clicked();
 
-private:
-    void buildGenreComboBox();
+    void on_pushButtonBook_clicked();
 
 private:
     Ui::MainWindow *ui;

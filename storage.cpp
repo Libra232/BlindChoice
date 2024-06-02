@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QTextStream>
 
+
 Storage::Storage(const QString &path):_path(path){};
 
 void Storage::readCsv()
@@ -38,6 +39,20 @@ void Storage::writeCsv(Book &book)
     QFile file(_path);
     file.open(QFile::Append);
     QTextStream ts(&file);
-    ts <<  book.Name << "," << book.Author << "," << book.Description << ","<< book.Genre << "," << book.Link << "," << book.year << "\n";
+    ts <<  book.Author << "," << book.Name << "," << book.Link << ","<< book.Description << "," << book.Genre << "," << book.year << "\n";
     file.close();
+}
+
+void Storage::writeCsvM(Movie &movie)
+{
+    QFile file(_path);
+    file.open(QFile::Append);
+    QTextStream ts(&file);
+    ts <<  movie.Director << "," << movie.Name << "," << movie.Link << ","<< movie.Description << "," << movie.Genre << "," << movie.year << "\n";
+    file.close();
+}
+
+Book Storage::getRandomRow() {
+    int randomIndex = rand();
+    return _libriary[randomIndex];
 }

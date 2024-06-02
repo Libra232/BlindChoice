@@ -5,6 +5,7 @@
 #include <string>
 #include <QList>
 
+
 //typedef QList<QList<QString>> strvec;
 using strvec = QList<QList<QString>>;
 
@@ -37,7 +38,9 @@ class Storage
 {
     public:
     void writeCsv(Book &book);
+    void writeCsvM(Movie &movie);
     void readCsv();
+    Book getRandomRow();
     Storage(const QString &path);
     friend std::ostream& operator <<(std::ostream& ostream, const Storage& t);
 
